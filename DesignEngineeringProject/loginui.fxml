@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" prefWidth="500" prefHeight="500" fx:controller="LoginRegController">
+	<top>
+		<TabPane tabClosingPolicy="unavailable">
+			<tabs>
+				<Tab text="Login" >
+					<content>
+						<GridPane alignment="center" vgap="20" hgap="20">
+							<Label text="Id: " GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+							<TextField fx:id="fid" promptText="Enter Your Unique id" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+							<Label text="Password: " GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+							<PasswordField fx:id="pass" promptText="Enter Your Password" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+							<Button text="Login" onAction="#loginuser" GridPane.rowIndex="6" GridPane.columnIndex="1" prefWidth="200" prefHeight="30"/>
+						</GridPane>
+					</content>
+				</Tab>
+
+				<Tab text="Register" >
+					<content>
+						<GridPane alignment="center" vgap="20" hgap="20">
+							<Label text="First Name:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+							<TextField fx:id="fname" promptText="Enter Your First Name" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+							<Label text="Middle Name:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+							<TextField fx:id="mname" promptText="Enter Your Middle Name" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+							<Label text="Last Name:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+							<TextField fx:id="lname" promptText="Enter Your First Name" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+							<Label text="Department:" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+							<ComboBox promptText="choose department" prefHeight="30" prefWidth="200" fx:id="dept" GridPane.rowIndex="7" GridPane.columnIndex="1">
+								<items>
+									<FXCollections fx:factory="observableArrayList">
+										<String fx:value="Mechanical" />
+										<String fx:value="Computer" />
+										<String fx:value="Information Technology" />
+										<String fx:value="Civil" />
+										<String fx:value="Electrical" />
+										<String fx:value="Electronics and Communication" />
+									</FXCollections>
+								</items>
+							</ComboBox>
+
+							<Label text="H.O.D.:" GridPane.rowIndex="9" GridPane.columnIndex="0"/>
+							<ComboBox promptText="Are You H.O.D?" prefHeight="30" prefWidth="200" fx:id="hod" GridPane.rowIndex="9" GridPane.columnIndex="1">
+								<items>
+									<FXCollections fx:factory="observableArrayList">
+										<String fx:value="Yes" />
+										<String fx:value="No" />
+									</FXCollections>
+								</items>
+							</ComboBox>
+
+							<Label text="Create Password: " GridPane.rowIndex="11" GridPane.columnIndex="0"/>
+							<PasswordField fx:id="createpass" promptText="create password" GridPane.rowIndex="11" GridPane.columnIndex="1"/>
+
+							<Button text="Register" onAction="#registeruser" GridPane.rowIndex="13" GridPane.columnIndex="1" prefWidth="200" prefHeight="30"/>
+						</GridPane>
+					</content>
+				</Tab>
+			</tabs>
+		</TabPane>
+	</top>
+
+	<bottom>
+		<Label fx:id="status" text="Your status goes here" prefWidth="Infinity" alignment="center"/>
+	</bottom>
+</BorderPane>

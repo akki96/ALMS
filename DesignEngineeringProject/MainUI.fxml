@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.collections.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.cell.*?> 
+
+<BorderPane xmlns:fx="http://javafx.com/fxml">
+	<top>
+		<VBox prefWidth="Infinity" minHeight="50" fx:id="topbox" alignment="center">
+			<children>
+				<HBox prefWidth="Infinity" spacing="20">
+					<children>
+						<HBox spacing="10">
+							<children>
+								<Label text="Your id: " />
+								<Label text="My id" prefWidth="200" fx:id="id"/>
+							</children>
+						</HBox>
+						<HBox spacing="10">
+							<Label text="|"/>
+							<Label text="First Name: "/>
+							<Label text="" fx:id="fname"/>
+						</HBox>
+						<HBox spacing="10">
+							<Label text="|"/>
+							<Label text="Middle Name: "/>
+							<Label text="" fx:id="mname"/>
+						</HBox>
+						<HBox spacing="10">
+							<Label text="|"/>
+							<Label text="Last Name: "/>
+							<Label text="" fx:id="lname"/>
+						</HBox>
+
+						<HBox spacing="10">
+							<Label text="|"/>
+							<Label text="Department: "/>
+							<Label text="" fx:id="department"/>
+						</HBox>
+					</children>
+				</HBox>
+			</children>
+		</VBox>	
+	</top>
+
+	<center>
+		<VBox prefWidth="300" maxWidth="Infinity" maxHeight="Infinity" alignment="center">
+	    <TabPane prefWidth="300" prefHeight="600" side="LEFT" rotateGraphic="true" tabMinWidth="50" tabMinHeight="200" tabClosingPolicy="unavailable" VBox.vgrow="always" fx:id="maintabpane" >
+				<tabs>
+					<Tab fx:id="mytab">
+						<graphic>
+							<StackPane>
+								<children>
+									<Group>
+										<children>
+											<Label text="Take Attendance" rotate="90" prefWidth="200" prefHeight="50" alignment="center"/>
+										</children>
+									</Group>
+								</children>
+							</StackPane>
+						</graphic>
+						<content>
+							
+
+							<BorderPane>
+								<top>
+									<VBox prefHeight="100" prefWidth="Infinity">
+
+									</VBox>
+								</top>
+								<center>
+									<fx:define>
+										<ToggleGroup fx:id="lect1"/>
+									</fx:define>
+									<fx:define>
+										<ToggleGroup fx:id="lect2"/>
+									</fx:define>
+									<fx:define>
+										<ToggleGroup fx:id="lect3"/>
+									</fx:define>
+									<fx:define>
+										<ToggleGroup fx:id="lect4"/>
+									</fx:define>
+									<fx:define>
+										<ToggleGroup fx:id="lect5"/>
+									</fx:define>
+									<fx:define>
+										<ToggleGroup fx:id="lect6"/>
+									</fx:define>
+									<GridPane prefWidth="Infinity" prefHeight="Infinity" vgap="20" hgap="20">
+										<Label text="Enrollment No: " GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+										<TextField fx:id="erno" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+										<Label GridPane.columnIndex="0" GridPane.rowIndex="1" text="Department: "/>
+										<ComboBox promptText="choose department" prefHeight="30" prefWidth="200" fx:id="dept" GridPane.rowIndex="1" GridPane.columnIndex="1">
+											<items>
+												<FXCollections fx:factory="observableArrayList">
+													<String fx:value="Mechanical" />
+													<String fx:value="Computer" />
+													<String fx:value="Information Technology" />
+													<String fx:value="Civil" />
+													<String fx:value="Electrical" />
+													<String fx:value="Electronics and Communication" />
+												</FXCollections>
+											</items>
+										</ComboBox>
+
+										<Label GridPane.columnIndex="0" GridPane.rowIndex="2" text="Semester:"/>
+										<ComboBox promptText="choose Semester" prefHeight="30" prefWidth="200" fx:id="sem" GridPane.rowIndex="2" GridPane.columnIndex="1">
+											<items>
+												<FXCollections fx:factory="observableArrayList">
+													<Integer fx:value="1" />
+													<Integer fx:value="2" />
+													<Integer fx:value="3" />
+													<Integer fx:value="4" />
+													<Integer fx:value="5" />
+													<Integer fx:value="6" />
+													<Integer fx:value="7"/>
+													<Integer fx:value="8"/>
+												</FXCollections>
+											</items>
+										</ComboBox>
+
+										<Label text="Software Engineering: " GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+										<HBox spacing="20" GridPane.rowIndex="3" GridPane.columnIndex="1">
+											<RadioButton toggleGroup="$lect1" text="Present"/>
+											<RadioButton toggleGroup="$lect1" text="Absent"/>
+										</HBox>
+
+
+										<Label text="Advanced Java: " GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+										<HBox spacing="20" GridPane.rowIndex="4" GridPane.columnIndex="1">
+											<RadioButton toggleGroup="$lect2" text="Present"/>
+											<RadioButton toggleGroup="$lect2" text="Absent"/>
+										</HBox>
+
+
+										<Label text="Theory of computation: " GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+										<HBox spacing="20" GridPane.rowIndex="5" GridPane.columnIndex="1">
+											<RadioButton toggleGroup="$lect3" text="Present"/>
+											<RadioButton toggleGroup="$lect3" text="Absent"/>
+										</HBox>
+
+
+										<Label text="Computer Graphics: " GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+										<HBox spacing="20" GridPane.rowIndex="6" GridPane.columnIndex="1">
+											<RadioButton toggleGroup="$lect4" text="Present"/>
+											<RadioButton toggleGroup="$lect4" text="Absent"/>
+										</HBox>
+
+
+										<Label text="Web Technology: " GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+										<HBox spacing="20" GridPane.rowIndex="7" GridPane.columnIndex="1">
+											<RadioButton toggleGroup="$lect5" text="Present"/>
+											<RadioButton toggleGroup="$lect5" text="Absent"/>
+										</HBox>
+
+
+										<Label text="Design Engineering: " GridPane.rowIndex="8" GridPane.columnIndex="0"/>
+										<HBox spacing="20" GridPane.rowIndex="8" GridPane.columnIndex="1">
+											<RadioButton toggleGroup="$lect6" text="Present"/>
+											<RadioButton toggleGroup="$lect6" text="Absent"/>
+										</HBox>
+
+										<Button text="Submit" onAction="#fillAttendance" GridPane.rowIndex="9" GridPane.columnIndex="1" />
+									</GridPane>
+								</center>
+							</BorderPane>
+						</content>
+					</Tab>
+
+
+
+
+					<Tab fx:id="mytab">
+						<graphic>
+							<StackPane>
+								<children>
+									<Group>
+										<children>
+											<Label text="See Attendance" rotate="90" prefWidth="200" prefHeight="50" alignment="center"/>
+										</children>
+									</Group>
+								</children>
+							</StackPane>
+						</graphic>
+						<content>
+
+							<BorderPane>
+								<top>
+									<VBox prefHeight="100" prefWidth="Infinity">
+										<Label text=""/>
+									</VBox>
+								</top>
+								<left>
+									<VBox prefWidth="300" prefHeight="Infinity"/> 
+								</left>
+								<center>
+									<VBox spacing="20">
+										<HBox spacing="20">
+											<Label text="Enrollment No:"/>
+											<TextField fx:id="en" promptText="Enter Enrollment No"/>
+										</HBox>
+										
+										<Button text="show" onAction="#seeAttendance"/>
+										<HBox spacing="10">
+											<Label text="Enrollment:"/>
+											<Label fx:id="name"/>
+										</HBox>
+										
+										<HBox spacing="10">
+											<Label text="Department :"/>
+											<Label fx:id="depart"/>
+										</HBox>
+										
+										<HBox spacing="10">
+											<Label text="sem:"/>
+											<Label fx:id="sems"/>
+										</HBox>
+
+										<HBox spacing="10">
+											<Label text="Software Engineering: "/>
+											<Label fx:id="se"/>
+										</HBox>
+
+										
+										<HBox spacing="10">
+											<Label text="Advanced Java:"/>
+											<Label fx:id="aj"/>
+										</HBox>
+										
+										<HBox spacing="10">
+											<Label text="Theory of computation: "/>
+											<Label fx:id="toc"/>
+										</HBox>
+
+										<HBox spacing="10">
+											<Label text="Computer Graphics:"/>
+											<Label fx:id="cg"/>
+										</HBox>
+
+										<HBox spacing="10">
+											<Label text="Web Technology:"/>
+											<Label fx:id="wt"/>
+										</HBox>
+										
+										<HBox spacing="10">
+											<Label text="Design Engineering:"/>
+											<Label fx:id="de"/>
+										</HBox>
+										
+
+										
+									</VBox>
+
+								</center>
+							</BorderPane>
+						</content>
+					</Tab>
+
+					<Tab fx:id="mytab">
+						<graphic>
+							<StackPane>
+								<children>
+									<Group>
+										<children>
+											<Label text="Leave Request" rotate="90" prefWidth="200" prefHeight="50" alignment="center"/>
+										</children>
+									</Group>
+								</children>
+							</StackPane>
+						</graphic>
+						<content>
+							<BorderPane>
+
+								<center>
+									<TabPane prefWidth="300" prefHeight="600" tabClosingPolicy="unavailable" VBox.vgrow="always" fx:id="subtabpane">
+										<tabs>
+											<Tab text="Send Leave Request">
+												<content>
+													<BorderPane>
+														<left>
+															<VBox prefWidth="300" prefHeight="Infinity"/> 
+														</left>
+														<top>
+															<VBox prefHeight="100" prefWidth="Infinity">
+														
+															</VBox>
+														</top>
+													</BorderPane>
+
+													
+													<VBox spacing="20">
+														<HBox spacing="10">
+															<Label text="To:"/>
+															<ComboBox fx:id="to"/>
+														</HBox>
+														<TextField promptText="Your leave cause:" fx:id="cause" prefHeight="100" prefWidth="400"/>	
+														<Button text="send" onAction="#sendLeaveRequest"/>
+													</VBox>
+												</content>
+											</Tab>
+											<Tab text="Sent Requests">
+												<content>
+													<VBox prefHeight="100" prefWidth="Infinity">
+														<Label text=""/>
+													</VBox>
+													<VBox prefWidth="Infinity" prefHeight="Infinity">
+														<HBox>
+															<Button text="Refresh" fx:id="refr" onAction="#refreshS"/>
+														</HBox>
+														
+														<TableView  fx:id="srview" >
+															<contextMenu>
+												                  <ContextMenu fx:id="srviewcontext">
+												                    <items>
+												                      <MenuItem mnemonicParsing="false" text="Accept" fx:id="delete"/>
+												                      
+												                    </items>
+												                  </ContextMenu>
+												               </contextMenu>
+															<columns>
+																<TableColumn text="Your Id" fx:id="fid">
+																	<cellValueFactory> <PropertyValueFactory property="fid"/></cellValueFactory>
+																</TableColumn>
+
+																<TableColumn text="To" fx:id="towhom">
+																	<cellValueFactory><PropertyValueFactory property="to" /></cellValueFactory>
+																</TableColumn>
+
+																<TableColumn text="Message" fx:id="message">
+																	<cellValueFactory><PropertyValueFactory property="message" /></cellValueFactory>
+																</TableColumn>
+																<TableColumn text="status" fx:id="Rstatus">
+																	<cellValueFactory><PropertyValueFactory property="status" /></cellValueFactory>
+																</TableColumn>
+															</columns>
+																<columnResizePolicy>
+																	<TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+																</columnResizePolicy>
+
+														</TableView>
+													</VBox>
+													
+												</content>
+											</Tab>
+											<Tab text="Received Requests">
+												<content>
+													<BorderPane>
+														<left>
+															<VBox prefWidth="300" prefHeight="Infinity"/> 
+														</left>
+														<top>
+															<VBox prefHeight="100" prefWidth="Infinity">
+														
+															</VBox>
+														</top>
+													</BorderPane>
+													<VBox prefWidth="Infinity" prefHeight="Infinity">
+														<HBox >
+															<Button text="Refresh" fx:id="ref" onAction="#refreshR"/>
+														</HBox>
+														
+														<TableView fx:id="rrview" >
+															 <contextMenu>
+												                  <ContextMenu fx:id="rrviewcontext">
+												                    <items>
+												                      <MenuItem mnemonicParsing="false" text="Accept" fx:id="accept" />
+												                      <MenuItem mnemonicParsing="false" text="Reject" fx:id="reject" />
+												                    </items>
+												                  </ContextMenu>
+												               </contextMenu>
+																<columns>
+																<TableColumn text="Your Id" fx:id="fid">
+																	<cellValueFactory> <PropertyValueFactory property="fid"/></cellValueFactory>
+																</TableColumn>
+
+																<TableColumn text="From" fx:id="from">
+																	<cellValueFactory><PropertyValueFactory property="from" /></cellValueFactory>
+																</TableColumn>
+
+																<TableColumn text="Message" fx:id="message">
+																	<cellValueFactory><PropertyValueFactory property="message" /></cellValueFactory>
+																</TableColumn>
+																<TableColumn text="Status" fx:id="RRstatus">
+																	<cellValueFactory><PropertyValueFactory property="status" /></cellValueFactory>
+																</TableColumn>
+															</columns>
+																	<columnResizePolicy>
+																			<TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+																		</columnResizePolicy>											
+														</TableView>
+													</VBox>
+				
+												</content>
+											</Tab>
+										</tabs>
+									</TabPane>
+								</center>
+							</BorderPane>
+						</content>
+					</Tab>
+
+					<Tab fx:id="mytab">
+						<graphic>
+							<StackPane>
+								<children>
+									<Group>
+										<children>
+											<Label text="Student Result" rotate="90" prefWidth="200" prefHeight="50" alignment="center"/>
+										</children>
+									</Group>
+								</children>
+							</StackPane>
+						</graphic>
+
+						<content>
+							<VBox prefHeight="100" prefWidth="Infinity">
+								<Label text=""/>
+							</VBox>
+								<VBox spacing="20">
+										<HBox spacing="20">
+											<Label text="Enrollment No:"/>
+											<TextField fx:id="marksno" promptText="Enter Enrollment No"/>
+										</HBox>
+										
+										<Button text="show" onAction="#seeResult"/>
+										<GridPane prefHeight="Infinity" prefWidth="Infinity" hgap="20" vgap="20">
+												
+											<Label text="Enrollment:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+											<Label fx:id="e" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+				
+										
+											<Label text="Software Engineering: " GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+											<Label fx:id="SE" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+										
+
+										
+										
+											<Label text="Advanced Java:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+											<Label fx:id="AJ" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+										
+										
+										
+											<Label text="Theory of computation: " GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+											<Label fx:id="TOC" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+										
+
+										
+											<Label text="Computer Graphics:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+											<Label fx:id="CG" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+										
+
+										
+											<Label text="Web Technology:" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+											<Label fx:id="WT" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+										
+										
+										
+											<Label text="Design Engineering:" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+											<Label fx:id="DE" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+
+										</GridPane>
+								</VBox>
+						</content>
+					</Tab>
+
+					<Tab fx:id="mytab">
+						<graphic>
+							<StackPane>
+								<children>
+									<Group>
+										<children>
+											<Label text="Enter Marks" rotate="90" prefWidth="200" prefHeight="50" alignment="center"/>
+										</children>
+									</Group>
+								</children>
+							</StackPane>
+						</graphic>
+						<content>
+							<VBox prefHeight="100" prefWidth="Infinity">
+
+							</VBox>
+							<VBox spacing="20">
+								<HBox spacing="20">
+											<Label text="Enrollment No:"/>
+											<TextField fx:id="entermarksno" promptText="Enter Enrollment No"/>
+										</HBox>
+								<HBox spacing="20">
+									<Label text="Software Engineering:"/>
+									<TextField fx:id="marksse"/>
+								</HBox>
+								<HBox spacing="20">
+									<Label text="Advanced Java:"/>
+									<TextField fx:id="marksaj"/>
+								</HBox>
+								<HBox spacing="20">
+									<Label text="Theory of computation: "/>
+									<TextField fx:id="markstoc"/>
+								</HBox>
+								<HBox spacing="20">
+									<Label text="Computer Graphics:"/>
+									<TextField fx:id="markscg"/>
+								</HBox>
+								<HBox spacing="20">
+									<Label text="Web Technology:"/>
+									<TextField fx:id="markswt"/>
+								</HBox>
+								<HBox spacing="20">
+									<Label text="Design Engineering:"/>
+									<TextField fx:id="marksde"/>
+								</HBox>
+								
+								<Button text="Submit" onAction="#submitMarks"/>
+
+							</VBox>
+						</content>
+					</Tab>
+				</tabs>
+			</TabPane>
+		</VBox>
+		
+	</center>
+
+	<bottom >
+		<Label fx:id="status" text="Your status goes here" alignment="center" prefWidth="Infinity"/>
+	</bottom>
+
+</BorderPane>
